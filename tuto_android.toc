@@ -14,11 +14,10 @@
 \contentsline {paragraph}{API Bluetooth Android}{2}{section*.2}
 \contentsline {paragraph}{Permission}{2}{section*.3}
 \contentsline {paragraph}{Bluetooth Adapter}{2}{section*.4}
-\contentsline {paragraph}{G\IeC {\'e}rer les devices}{2}{section*.5}
 \contentsline {paragraph}{Connexion \IeC {\`a} un p\IeC {\'e}riph\IeC {\'e}riques}{2}{section*.6}
 \contentsline {subparagraph}{Client}{2}{section*.7}
 \contentsline {subparagraph}{Serveur}{2}{section*.8}
-\contentsline {subparagraph}{P\IeC {\'e}riph\IeC {\'e}rique exterieur}{2}{section*.9}
+\contentsline {subparagraph}{P\IeC {\'e}riph\IeC {\'e}rique exterieur}{3}{section*.9}
 \contentsline {subsection}{\numberline {7.2}Introduction au service}{3}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Programme STM32 Nucl\IeC {\'e}o}{3}{subsection.7.3}
 \contentsline {section}{\numberline {8}Foire aux conseils ;-)}{3}{section.8}
