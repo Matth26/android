@@ -9,4 +9,7 @@
 \BOOKMARK [1][-]{section.5}{Int\351gration du joystick}{}% 9
 \BOOKMARK [1][-]{section.6}{Utilisation des capteurs}{}% 10
 \BOOKMARK [1][-]{section.7}{Communication avec une STM}{}% 11
-\BOOKMARK [1][-]{section.8}{Foire aux conseils ;-\)}{}% 12
+\BOOKMARK [2][-]{subsection.7.1}{Connexion Bluetooth}{section.7}% 12
+\BOOKMARK [2][-]{subsection.7.2}{Introduction au service}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.3}{Programme STM32 Nucl\351o}{section.7}% 14
+\BOOKMARK [1][-]{section.8}{Foire aux conseils ;-\)}{}% 15
