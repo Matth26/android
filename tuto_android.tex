@@ -1,10 +1,11 @@
 \documentclass[a4paper,10pt]{article}
 
-\title{Tuto Android - Faire une aplli du feu de dieu !!}
+\title{Tuto Android - Faire une apli du feu de dieu !!}
 
 \author{TERRIE Corentin \\ CROS Bastien \\ MONNIER Matthias}
 
 \date{\today}
+
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel} 
@@ -36,6 +37,7 @@ identifierstyle=\ttfamily,
 keywordstyle=\color[rgb]{0,0,1},
 commentstyle=\color[rgb]{0.133,0.545,0.133},
 stringstyle=\color[rgb]{0.627,0.126,0.941},
+breaklines=true,
 }
 %----------------------------------------------------------
 
@@ -46,6 +48,7 @@ stringstyle=\color[rgb]{0.627,0.126,0.941},
 
 
 %-------------------------------------------------------------------------------
+
 
 \section{Notion élémentaire Watson} % Intro aux développement Android
 
@@ -97,20 +100,53 @@ Voici le lien :
 \subsection{Connexion Bluetooth}
 % connection BT -> intro a l'api BT, mode de connexion , ordre, etc.
 % fais le tour des possibilités de base de l'api
+% '-> à metre dans le 1er paragraphe. Ici juste un intro.
+
 	\paragraph{API Bluetooth Android}
 	% Besoin si différent de l'intro !!!
 	% presenter les différents élements 
-	\paragraph{Permission}
-	% courte intro sur permission
-	% implémenter la permission
-	\paragraph{Bluetooth Adapter}
+	% partie pas mise en forme !!
+	Service offert par l'API : \\
+		- Scanner les périphériques BT. \\
+		- Connaître les différents périphériques appareillés. \\
+		- RFCOMM. \\
+		- Connection à des périphériques BT. \\
+		- Transfert de données via BT. \\
+		- Multiple connection. \\\\
+	RFCOMM $->$ serial port emulation (RS-232 serial port) $=$ protocole bluetooth pour simuler une connexion série (jusqu'à 6) avec un autre péripherique.\\\\
+	Quelques classes offerte par l'API BT : \\
+	- \textit{BluetoothAdapter} $=$ Interface physique BT pour interagir avec son la radio BT locale. \\
+	- \textit{BluetoothDevice} $=$ Chacun représente un périphériques BT distant. Contient les inforations telles que le nom, l'adresse etc. \\
+	- \textit{BluetoothSocket} $=$ (équivalent des TCP Socket) Point de connexion avec un périphériques, permet d'échanger des données. \\
+	- \textit{BluetoothClass} $=$ Décrit les caractéristiques d'un périphériques BT distant. \\
+	\paragraph{Première approche du Bluetooth : \\}
+	Pour découvrir l'utilisation du Bluetooth sur une tablette Android, voici un petits tuto assez complet : \\
+	\url{http://www.tutos-android.com/utilisation-bluetooth-application-android} \\
+	Il permet d'appréhender les fonctionnalités de base offerte par l'API bluetooth, telle que l'autorisation et l'activation de celui-ci. Il explique aussi comment scanner les périphériques environnant, et parle de la connexion entre périphériques bluetooth, du coté serveur et client.
+	
+	
+	\paragraph{Se connecter à un module Bluetooth}
+	
+	En sebasant sur l'application proposé par le site suivant : \\
+	\url{http://marcel.cremmel.llc.free.fr/Projets/Android_files/Tutorial%20Android%20-%20Communication%20Bluetooth%20SPP.pdf}
+	Nous allons maitenant créer une classe service permettant de gérer les connexion Bluetooth.
+	\subparagraph{Les services}
+	Le service est l'équivalent d'une Activités, mais sans interface graphique. Cela le rends pratique pour exécuter des tâche en arrière-plan. Par exemple, lorsque l'on écoute de la musique sur son téléphone, il est possible de revenir sur le bureau, et de lancer d'autre application sans que la musique s'arrète : c'est la tout l'intérêt des services.
+	Pour implémenter un service, il faut créer une nouvelle classe, que l'on nommera \textit{BluetoothService}, et la faire hériter de la classe \textit{service} grâce au mot clef \textit{extends} :
+	\begin{lstlisting}
+	public class BluetoothService extends Service
+	{
+			 Ici on implémente les méthodes de la classe
+	}
+	\end{lstlisting}
+	
 	
 	\paragraph{Gérer les devices}
 	% lister périphériqus déjà existant 
 	% recherche de nouveau périphériques -> parleer de BroadcastReceiver
 	\begin{lstlisting}
 		@Override
-		
+ 
 		protected void onDestroy() {
   			super.onDestroy();
   			bluetoothAdapter.cancelDiscovery();
